@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools" android:id="@+id/my_nav"
+            app:startDestination="@id/moviesFragment">
+    <fragment android:id="@+id/moviesFragment" android:name="com.oe.moviesearcher.fragment.MoviesFragment"
+              android:label="Sinema" tools:layout="@layout/movies_fragment">
+        <action android:id="@+id/action_moviesFragment_to_detailFragment" app:destination="@id/detailFragment"
+                app:enterAnim="@anim/from_right" app:exitAnim="@anim/to_left" app:popEnterAnim="@anim/from_left"
+                app:popExitAnim="@anim/to_right"/>
+    </fragment>
+    <fragment android:id="@+id/detailFragment" android:name="com.oe.moviesearcher.fragment.DetailFragment"
+              android:label="Detay" tools:layout="@layout/fragment_detail">
+        <action android:id="@+id/action_detailFragment_to_moviesFragment" app:destination="@id/moviesFragment"
+                app:exitAnim="@anim/to_right" app:enterAnim="@anim/from_left" app:popUpTo="@id/moviesFragment"
+                app:popUpToInclusive="true"/>
+        <argument android:name="position" app:argType="integer" android:defaultValue="0"/>
+    </fragment>
+</navigation>

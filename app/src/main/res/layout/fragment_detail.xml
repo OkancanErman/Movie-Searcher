@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <import type="android.view.View" />
+        <variable
+                name="movie"
+                type="com.oe.moviesearcher.network.MovieResponse"/>
+    </data>
+
+    <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <LinearLayout android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:orientation="vertical"
+                      tools:context=".fragment.DetailFragment">
+
+            <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="match_parent"
+                    android:scaleType="matrix"
+                    android:layout_height="195dp"
+            />
+            <TextView android:text="@{movie.title}"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:layout_gravity="center"
+                      android:layout_marginTop="10dp"
+                      android:textColor="#1A1A1A"
+                      android:textStyle="bold"/>
+
+        <LinearLayout android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:layout_marginHorizontal="20dp"
+                      android:weightSum="2"
+                      android:orientation="horizontal">
+            <LinearLayout android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:layout_weight="1"
+                          android:orientation="vertical">
+                <TextView android:text="@{movie.genre}"
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:textColor="#1A1A1A" />
+                <TextView android:text="@{movie.imdbRating}"
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:textColor="#1A1A1A" />
+                <TextView android:text="@{movie.language}"
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:textColor="#1A1A1A" />
+                <TextView android:text="@{movie.director}"
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:textColor="#1A1A1A" />
+            </LinearLayout>
+            <LinearLayout android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:layout_weight="1"
+                          android:orientation="vertical">
+                <TextView android:text="@{movie.runtime}"
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:textColor="#1A1A1A" />
+                <TextView android:text="@{movie.actors}"
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:textColor="#1A1A1A" />
+                <TextView android:text="@{movie.awards}"
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:textColor="#1A1A1A" />
+            </LinearLayout>
+        </LinearLayout>
+            <TextView android:text="@{movie.plot}"
+                      android:layout_width="match_parent"
+                      android:layout_height="0dp"
+                      android:layout_weight="1"
+                      android:textColor="#1A1A1A"
+                      android:layout_marginHorizontal="20dp"
+                      android:layout_marginTop="15dp"/>
+
+            <Button
+                    android:text="Back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/button_detail"
+                    android:layout_gravity="center"/>
+
+        </LinearLayout>
+    </ScrollView>
+</layout>
